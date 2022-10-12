@@ -1,0 +1,103 @@
+p
+{
+    margin: 0;
+    padding: 0;
+}
+.image
+{
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+img
+{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
+.img-desc
+{
+    margin: 16px auto;
+}
+.titleHeading
+{
+    margin: 8px auto;
+    font-size: 32px;
+    font-family: cursive;
+}
+.titleDescription
+{
+    font-size:18px;
+}
+.info
+{
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#1C3879;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5%;
+    font-size: 28px;
+}
+.checked
+{
+    color:#1C3879;
+}
+.Website
+{
+    width: 80%;
+    margin: auto;
+}
+.tab
+{
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-top: 16px;
+    height: 60vh;
+    box-shadow: #1C3879 0px 3px 8px;
+}
+th
+{
+    border-bottom: solid 1px black;
+    font-size: 28px;
+    color:#1C3879
+}
+td
+{
+    font-size: 24px;
+}
+.heading
+{
+    font-size: 32px;
+    margin:24px 0 0 0;
+    padding: 0;
+    font-weight: 700;
+    color: #1C3879;
+}
+.education
+{
+
+}
+.edu-head
+{
+    font-size: 18px;
+    font-weight: 600;
+    color:#1C3879;
+}
+.edu-desc
+{
+    font-size: 14px;
+    margin: 8px 0;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.percentage
+{
+    font-weight: 500;
+    color: rgb(44, 44, 44);
+}
