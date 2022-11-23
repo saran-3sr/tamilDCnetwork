@@ -33,7 +33,7 @@ def encodeData(data,key):
     return codeword
 s=socket.socket()
 port=8000
-s.connect(('10.1.30.170',8000))
+s.connect(('192.168.1.8',8000))
 input_string=input("Enter data you want to send->")
 data =(''.join(format(ord(x), 'b') for x in input_string))
 print("Entered data in binary format :",data)

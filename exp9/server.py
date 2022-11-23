@@ -79,7 +79,7 @@ print("Socket successfully created")
 # case it is 12345 but it can be anything
 port = 8000
  
-s.bind(('10.1.30.170', port))
+s.bind(('192.168.1.8', port))
 print("socket binded to %s" % (port))
 # put the socket into listening mode
 s.listen(5)
