@@ -1,8 +1,6 @@
 from concurrent.futures import thread
 from string import whitespace
 import socket
-
-
 import time
 import threading
 

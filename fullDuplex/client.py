@@ -2,14 +2,12 @@ from concurrent.futures import thread
 from pydoc import cli
 from string import whitespace
 import socket
-
-
 import time
 import threading
 
 client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-client.connect(('178.128.99.116',80))
+client.connect(('127.0.0.1',80))
 
 def getmsg():
   while True:
