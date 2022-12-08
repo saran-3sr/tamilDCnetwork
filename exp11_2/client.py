@@ -1,5 +1,4 @@
-import urllib.request, urllib.error, urllib.parse
-
+import urllib.request
 url = 'https://ysyouthgct.in/'
 
 response = urllib.request.urlopen(url)

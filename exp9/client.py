@@ -21,8 +21,8 @@ def mod2div(divident,divisor):
         tmp=xor(divisor,tmp)
     else:
         tmp=xor('0'*pick,tmp)
-    checkword = tmp
-    return checkword
+    remainder = tmp
+    return remainder
 
 def encodeData(data,key):
     l_key=len(key)

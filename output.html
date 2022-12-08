@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="helloworld">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="description" content="Ever wondered how to write Hello World in some random programming language? Here we list examples of the Hello World program in various programming languages.">
+    <title>Hello World - Simple source code examples</title>
+    <link rel="stylesheet" href="./css/prism.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/hwstyle.css">
+
+  </head>
+<body> 
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+
+
+</div>
+<div class="container">
+<div class="jumbotron">
+<h1>Hello World</h1>
+<p>A "Hello world" program is a computer program that outputs "Hello World" (or some variant) 
+   on a display device. The first known version of this program comes from Brian Kernighan's paper <a href="https://www.bell-labs.com/usr/dmr/www/btut.pdf" target="_blank">A Tutorial Introduction to the Language B</a> from 1972 (chapter 7).
+   In it's first form it was used to show how to use external variables in B but since then it has become pretty much the standard example to show the very basic syntax and most simple program in any given programming language.</p>
+<p>On this page you can find a bunch of source code examples in various programming languages. Here is a legend of how the page is built up:</p>
+	<div class="col-md-4">
+	  <div class="codeheading row">
+	    <div style="padding-left:4px" class="col-xs-6">
+	    <a data-toggle="collapse" href="#codepart"><span class="expandicon glyphicon glyphicon-chevron-right"></span></a>
+	    Name</div>
+		<div style="padding-right:2px; float:right" class="col-xs-6">
+		  <a href=""><span class="iconlink glyphicon glyphicon-download" title="Download"></span></a>
+		  <a href=""><span class="iconlink glyphicon glyphicon-globe" title="Wikipedia"></span></a>
+     	  <a href=""><span class="iconlink glyphicon glyphicon-list-alt" title="Tutorial"></span></a>
+		  <a href=""><span class="iconlink glyphicon glyphicon-book" title="Amazon"></span></a>
+		</div>
+      </div>
+	<div id="codepart" class="collapse">	
+      <pre><code class="language-c">Actual source code
+goes
+here...</code></pre></div>	
+    </div> 
+    <div class="col-md-8">
+    	<p><span class="legendicon glyphicon glyphicon-chevron-right"></span> Click to expand and see source code</p>
+  		<p><span class="legendicon glyphicon glyphicon-download"></span> Download the example source file</p>
+  		<p><span class="legendicon glyphicon glyphicon-globe"></span> Read more about the specific programming language at wikipedia</p>
+  		<p><span class="legendicon glyphicon glyphicon-book"></span> Buy beginners books about the programming language (optional)</p>
+  		<p><span class="legendicon glyphicon glyphicon-list-alt"></span> Tutorial on the programming language selected (optional)</p>
+
+    </div>
+</div></div><br>
+<div ng-controller="SourceCode as sourceCtrl">
+<div class="container">
+
+<div ng-repeat="s in sourceCtrl.sources" class="row" ng-if="$index % 3 == 0" source-loop>
+  <div ng-repeat="source in sourceCtrl.sources.slice($index, $index+3)">
+    <div class="col-md-4" style="margin-bottom: 10px">
+	  <div class="codeheading row">
+	    <div style="padding-left:4px" class="col-xs-8"><a data-toggle="collapse" ng-attr-href="{{'#codepart' + $parent.$index + '-' + $index}}">
+	    <span ng-attr-id="{{'item' + $parent.$index + '-' + $index}}" class="expandicon glyphicon glyphicon-chevron-right"></span></a><img alt="Language Logo" ng-if="source.img != null" src="./img/{{source.img}}" style="height:20px; margin-bottom: 4px"></img>{{source.lang}}</div>
+		<div style="padding-right:2px; float:right" class="col-xs-4">
+		  <a href="data/{{source.filename}}" target="_blank"><span class="iconlink glyphicon glyphicon-download" title="Download"></span></a>
+		  <a href="{{source.wikilink}}" target="_blank"><span class="iconlink glyphicon glyphicon-globe" title="Wikipedia"></span></a>
+     	  <a ng-if="source.tutoriallink != null" href="{{source.tutoriallink}}" target="_blank"><span class="iconlink glyphicon glyphicon-list-alt" title="Tutorial"></span></a>
+		  <a ng-if="source.amazonlink != null" href="{{source.amazonlink}}" target="_blank"><span class="iconlink glyphicon glyphicon-book" title="Amazon"></span></a>
+		</div>
+      </div>
+	  <div ng-attr-id="{{'codepart' + $parent.$index + '-' + $index}}" class="collapse">	
+        
+        <pre><code class="{{source.langclass}}">{{source.sourceCode}}</code><div ng-hide="{{'dataLoaded' + ($parent.$index + $index + 1)}}">Loading source...</div></pre>	
+      </div>
+    </div>   
+  </div>
+  
+</div>
+
+</div> 
+</div>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+<footer>
+<div class="navbar navbar-bottom" role="navigation" ng-controller="Contact as contact">
+  <div class="container">
+  <div class="navbar-left">
+    <a class="nav-btn" href="mailto:{{contact.mail}}@helloworld.org"><span style="font-size: 16px; color:#000" class="nav-btn glyphicon glyphicon-envelope" title="Contact"></span></a>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li style="margin-top:8px"><g:plusone></g:plusone></li>
+    <li style="margin-top:8px"><a href="https://twitter.com/share" class="twitter-share-button navbar-btn" data-lang="en">Tweet</a></li>
+    <li style="margin-top:8px"><a style="padding: 0" href="http://www.angularjs.org" target="_blank"><img alt="Angular.JS was used to create this page" style="height:32px" src="./img/AngularJS_logo.svg"></img></a></li>
+
+  </ul>
+  
+</div>
+</footer>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67306855-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="./js/prism.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
+  <script src="./js/nghelloworld.js"></script>
+
+</body>
+</html>
